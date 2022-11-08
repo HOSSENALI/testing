@@ -2,11 +2,11 @@ import { fireEvent, logRoles, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MySelector } from "./MultipleSelector";
 describe("Selector", () => {
-  //   test("heading text", () => {
-  //     render(<MySelector />);
-  //     const text = screen.getByText(/Your favorite country is/i);
-  //     expect(text).toBeInTheDocument();
-  //   });
+    test("heading text", () => {
+      render(<MySelector />);
+      const text = screen.getByRole("heading");
+      expect(text).toHaveTextContent(/Your favorite color is/i);
+    });
 
   test("checks value changes when user chooses a new size", () => {
     render(<MySelector />);

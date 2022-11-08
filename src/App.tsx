@@ -6,6 +6,7 @@ import { CounterTwo } from "./components/counter-two/CounterTwo";
 import { Skills } from "./components/skills/Skills";
 import { SkillsProps } from "./components/skills/Skills.types";
 import { MySelector } from "./components/selector/MultipleSelector";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <CounterTwo count={0} />
       <Skills skills={skills} />
       <MySelector/>
+      <LoginForm />
     </div>
   );
 }

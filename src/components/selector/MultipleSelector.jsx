@@ -11,16 +11,7 @@ export const MySelector = () => {
   return (
     <>
       <h1>Your favorite color is {color}</h1>
-      {/* <select
-        options={options}
-        value={color.label}
-        onChange={(value) => {
-          console.log(value);
-          setColor(value);
-        }}
-      /> */}
       <select
-    
         data-testid="select"
         value={color}
         onChange={(e) => {
@@ -28,9 +19,7 @@ export const MySelector = () => {
         }}
       >
         <option value="">Select a country</option>
-        <option value="Red" selected>
-          Red
-        </option>
+        <option value="Red">Red</option>
         <option value="Green">Green</option>
       </select>
     </>
