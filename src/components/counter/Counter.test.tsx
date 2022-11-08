@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Counter } from "./Counter";
 import user from "@testing-library/user-event";
 import { count } from "console";
+import userEvent from "@testing-library/user-event";
 
 describe("Counter", () => {
   test("Heading", () => {
@@ -54,4 +55,16 @@ describe("Counter", () => {
     const header = screen.getByRole("heading", { level: 2 });
     expect(header).toHaveTextContent("Hossen");
   });
+  test('elements are focused in the right order', async () => {
+    render(<Counter />)
+    const amountInput = screen.getByRole('spinbutton')
+    const setButton = screen.getByRole('button', { name: 'Set' })
+    const incrementButton = screen.getByRole('button', { name: 'Increment' })
+    await user.tab()
+    expect(incrementButton).toHaveFocus()
+    await user.tab()
+    expect(amountInput).toHaveFocus()
+    await user.tab()
+    expect(setButton).toHaveFocus()
+  })
 });
